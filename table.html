@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Kami</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="icon" href="img/favicon.png">
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4 text-center text-primary">Core Bisnis</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Layanan</th>
+                        <th>Deskripsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Website Development</td>
+                        <td>Mengembangkan situs web kustom sesuai kebutuhan pelanggan.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Mobile App Development</td>
+                        <td>Mengembangkan aplikasi seluler untuk platform iOS dan Android.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>IT Infrastruktur</td>
+                        <td>Menyediakan solusi infrastruktur IT seperti server, jaringan, dan komputasi awan.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Pelatihan IT</td>
+                        <td>Memberikan pelatihan dalam berbagai bidang IT kepada karyawan dan individu.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Operation and Maintenance</td>
+                        <td>Menyelenggarakan operasi dan pemeliharaan sistem IT pelanggan.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <!-- Button trigger modal -->
+        <a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal">
+            Buat Pesanan
+        </a>
+        <a href="/index.html" type="button" class="btn btn-secondary">Kembali</a>
+    
+        <!-- Order Modal -->
+        <div class="modal fade" id="orderModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="orderModalLabel">Buat Pesanan</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="orderForm">
+                            <div class="mb-3">
+                                <label for="serviceName" class="form-label">Pilih Layanan</label>
+                                <select class="form-select" id="serviceName" name="serviceName">
+                                    <option value="Website Development">Website Development</option>
+                                    <option value="Mobile App Development">Mobile App Development</option>
+                                    <option value="IT Infrastruktur">IT Infrastruktur</option>
+                                    <option value="Pelatihan IT">Pelatihan IT</option>
+                                    <option value="Operation and Maintenance">Operation and Maintenance</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Deskripsi Pesanan</label>
+                                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button type="button" class="btn btn-primary" onclick="placeOrder()">Buat Pesanan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function placeOrder() {
+            var selectedService = document.getElementById('serviceName').value;
+            var description = document.getElementById('description').value;
+
+            // Gantilah dengan logika pemesanan yang sesuai di sini.
+            alert("Pesanan berhasil dibuat!\nLayanan: " + selectedService + "\nDeskripsi: " + description);
+            document.getElementById('serviceName').value = "";
+            document.getElementById('description').value = "";
+        }
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
